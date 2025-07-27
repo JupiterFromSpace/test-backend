@@ -38,7 +38,7 @@ class StoneFAQ(models.Model):
     '''
     stone = models.ForeignKey(Stone, on_delete=models.CASCADE, related_name='faqs')
     question = models.CharField(max_length=255, verbose_name='سوال')
-    answer = models.TextField(verbose_name='پاسخ')
+    answer = models.TextField(verbose_name='پاسخ', blank=True, null=True)
 
     def __str__(self):
         return f'سوال: {self.question} درباره {self.stone.name}'
